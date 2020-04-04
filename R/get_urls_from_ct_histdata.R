@@ -32,9 +32,11 @@ df <- read_csv(col_types = cols(
   `Final Link` = col_character()),
   file =  ct_histdata_csv)
 
-df$`Final Link` <- ifelse(is.na(df$`Final Link`), df$Link, df$`Final Link`) # keep expanded links only
+df$url <- ifelse(is.na(df$`Final Link`), df$Link, df$`Final Link`) # keep expanded links only
 
-urls <- df %>% group_by(Final Link) %>% summarise(Created = min(Created))
+urls <- df %>% group_by(url) %>% summarise(Created = min(Created))
+names(urls) <- c("url, "date")
+
 rm(df)
 return(urls)
 }
