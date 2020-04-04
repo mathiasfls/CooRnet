@@ -35,7 +35,6 @@ df <- read_csv(col_types = cols(
 df$url <- ifelse(is.na(df$`Final Link`), df$Link, df$`Final Link`) # keep expanded links only
 
 urls <- df %>% group_by(url) %>% summarise(Created = min(Created))
-names(urls) <- c("url, "date")
 
 rm(df)
 return(urls)
