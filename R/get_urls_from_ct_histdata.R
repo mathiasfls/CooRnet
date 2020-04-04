@@ -16,7 +16,7 @@
 #'
 #' @export
 
-get_urls_from_ct_histdata(ct_histdata_csv=NULL) {
+get_urls_from_ct_histdata <- function(ct_histdata_csv=NULL) {
 
 require(readr)
 require(dplyr)
