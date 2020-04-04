@@ -31,6 +31,9 @@
 #' # Save the data frame in csv format
 #' save.csv(highly_connected_coordinated_entities, file=“highly_connected_coordinated_entities.csv”)
 #'
+#' @importFrom stats filter quantile
+#' @importFrom utils setTxtProgressBar txtProgressBar
+#'
 #' @export
 
 get_coord_shares <- function(ctshares_output, coordination_interval=NULL, parallel=FALSE, percentile_edge_weight=0.90, clean_urls=FALSE){
