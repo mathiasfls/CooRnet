@@ -29,7 +29,7 @@ df <- read_csv(col_types = cols(
   .default = col_skip(),
   Created = col_character(),
   Link = col_character(),
-  Final Link = col_character()),
+  `Final Link` = col_character()),
   file =  ct_histdata_csv)
 
 df$`Final Link` <- ifelse(is.na(df$`Final Link`), df$Link, df$`Final Link`) # keep expanded links only
